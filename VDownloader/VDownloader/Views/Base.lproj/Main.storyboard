@@ -4,12 +4,13 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Browser View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="BrowserViewController" customModule="VDownloader" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,34 +18,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="112.5" y="312" width="150.5" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="90.5" y="363" width="194.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhd-Ed-25D">
+                                <rect key="frame" x="0.0" y="56.5" width="375" height="554"/>
+                                <subviews>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxu-DJ-CyM">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9pv-A4-QxB" id="0BK-Oj-vaE"/>
+                                        </connections>
+                                    </webView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cxu-DJ-CyM" secondAttribute="bottom" id="AV4-JZ-9Dh"/>
+                                    <constraint firstItem="cxu-DJ-CyM" firstAttribute="top" secondItem="yhd-Ed-25D" secondAttribute="top" id="Phi-2J-tWk"/>
+                                    <constraint firstAttribute="trailing" secondItem="cxu-DJ-CyM" secondAttribute="trailing" id="QrM-fj-P6j"/>
+                                    <constraint firstItem="cxu-DJ-CyM" firstAttribute="leading" secondItem="yhd-Ed-25D" secondAttribute="leading" id="Wgm-x8-zF8"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABf-SK-Bm3">
+                                <rect key="frame" x="37" y="576" width="300" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ri-2Y-sPI">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="32"/>
+                                        <state key="normal" title="Click here to download played video">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="downloadButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Vuf-MZ-Mgl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.9767052531" green="0.60546392199999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9Ri-2Y-sPI" secondAttribute="bottom" id="BqB-hO-62K"/>
+                                    <constraint firstItem="9Ri-2Y-sPI" firstAttribute="top" secondItem="ABf-SK-Bm3" secondAttribute="top" id="CcZ-rS-oxW"/>
+                                    <constraint firstAttribute="height" constant="32" id="JP6-6s-RLB"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Ri-2Y-sPI" secondAttribute="trailing" id="egR-H9-2Rm"/>
+                                    <constraint firstItem="9Ri-2Y-sPI" firstAttribute="leading" secondItem="ABf-SK-Bm3" secondAttribute="leading" id="n9e-m1-dp0"/>
+                                    <constraint firstAttribute="width" constant="300" id="wBK-79-CcS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="yhd-Ed-25D" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Mcx-UW-A78"/>
+                            <constraint firstItem="yhd-Ed-25D" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="Noy-on-L7G"/>
+                            <constraint firstItem="yhd-Ed-25D" firstAttribute="width" secondItem="PQr-Ze-W5v" secondAttribute="width" id="QmQ-51-G5W"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="ABf-SK-Bm3" secondAttribute="bottom" constant="10" id="mOE-Lq-jef"/>
+                            <constraint firstItem="ABf-SK-Bm3" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="prZ-BT-bUQ"/>
+                            <constraint firstItem="yhd-Ed-25D" firstAttribute="height" secondItem="PQr-Ze-W5v" secondAttribute="height" id="qbX-14-5pq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="Og8-Jm-xQO">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="fip-Sm-NMr">
+                            <connections>
+                                <action selector="goBack" destination="cxu-DJ-CyM" id="CYk-jx-UIS"/>
+                            </connections>
+                        </barButtonItem>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="www.youtube.com/watch?v=-_3dc6X-Iwo" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="wNF-YB-MYd">
+                            <rect key="frame" x="57" y="7" width="280" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                            <connections>
+                                <outlet property="delegate" destination="9pv-A4-QxB" id="c4C-dF-iy4"/>
+                            </connections>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" title="Go" style="plain" id="lpO-bd-3YK">
+                            <connections>
+                                <action selector="goButtonClicked:" destination="9pv-A4-QxB" id="ecZ-Z2-JZL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="browserTextField" destination="wNF-YB-MYd" id="OlG-xV-gpO"/>
+                        <outlet property="downloadButtonView" destination="ABf-SK-Bm3" id="be6-wD-TlQ"/>
+                        <outlet property="webView" destination="cxu-DJ-CyM" id="lYA-XZ-7xY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="1541.5999999999999" y="-321.58920539730138"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -93,13 +157,32 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="6NY-uY-aMn" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--First-->
+        <scene sceneID="Obx-iM-qg4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6NY-uY-aMn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="THT-gm-qhX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="3EW-8x-IRN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ud0-fO-CtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748.79999999999995" y="-320.23988005997006"/>
         </scene>
     </scenes>
     <resources>
