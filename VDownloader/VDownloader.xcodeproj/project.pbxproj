@@ -13,6 +13,8 @@
 		1F92771A1F8114B00023DEF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9277181F8114B00023DEF4 /* LaunchScreen.storyboard */; };
 		1F9277261F8115700023DEF4 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277251F8115700023DEF4 /* BrowserViewController.swift */; };
 		1F9277281F81157D0023DEF4 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277271F81157D0023DEF4 /* DownloadsViewController.swift */; };
+		1F9277311F8135090023DEF4 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277301F8135090023DEF4 /* BrowserViewModel.swift */; };
+		1F9277341F8135200023DEF4 /* DownloadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277331F8135200023DEF4 /* DownloadsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1F92771B1F8114B00023DEF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F9277251F8115700023DEF4 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		1F9277271F81157D0023DEF4 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		1F9277301F8135090023DEF4 /* BrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModel.swift; sourceTree = "<group>"; };
+		1F9277331F8135200023DEF4 /* DownloadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,19 +64,10 @@
 				1F9277161F8114B00023DEF4 /* Assets.xcassets */,
 				1F92771B1F8114B00023DEF4 /* Info.plist */,
 				1F92772B1F8115A20023DEF4 /* Models */,
+				1F92772C1F8134930023DEF4 /* ViewModels */,
 				1F9277291F81158E0023DEF4 /* Views */,
-				1F9277241F81155D0023DEF4 /* ViewControllers */,
 			);
 			path = VDownloader;
-			sourceTree = "<group>";
-		};
-		1F9277241F81155D0023DEF4 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				1F9277251F8115700023DEF4 /* BrowserViewController.swift */,
-				1F9277271F81157D0023DEF4 /* DownloadsViewController.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		1F9277291F81158E0023DEF4 /* Views */ = {
@@ -80,6 +75,8 @@
 			children = (
 				1F9277131F8114B00023DEF4 /* Main.storyboard */,
 				1F9277181F8114B00023DEF4 /* LaunchScreen.storyboard */,
+				1F92772D1F8134B60023DEF4 /* BrowserViewController */,
+				1F92772E1F8134C90023DEF4 /* DownloadsViewController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +86,47 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1F92772C1F8134930023DEF4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1F9277321F81350E0023DEF4 /* DownloadsViewModel */,
+				1F92772F1F8134FA0023DEF4 /* BrowserViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1F92772D1F8134B60023DEF4 /* BrowserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F9277251F8115700023DEF4 /* BrowserViewController.swift */,
+			);
+			path = BrowserViewController;
+			sourceTree = "<group>";
+		};
+		1F92772E1F8134C90023DEF4 /* DownloadsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F9277271F81157D0023DEF4 /* DownloadsViewController.swift */,
+			);
+			path = DownloadsViewController;
+			sourceTree = "<group>";
+		};
+		1F92772F1F8134FA0023DEF4 /* BrowserViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F9277301F8135090023DEF4 /* BrowserViewModel.swift */,
+			);
+			path = BrowserViewModel;
+			sourceTree = "<group>";
+		};
+		1F9277321F81350E0023DEF4 /* DownloadsViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F9277331F8135200023DEF4 /* DownloadsViewModel.swift */,
+			);
+			path = DownloadsViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,8 +202,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F92770E1F8114B00023DEF4 /* AppDelegate.swift in Sources */,
+				1F9277311F8135090023DEF4 /* BrowserViewModel.swift in Sources */,
 				1F9277261F8115700023DEF4 /* BrowserViewController.swift in Sources */,
 				1F9277281F81157D0023DEF4 /* DownloadsViewController.swift in Sources */,
+				1F9277341F8135200023DEF4 /* DownloadsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
