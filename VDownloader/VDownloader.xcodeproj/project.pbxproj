@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F634CB81F851D13001C0354 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F634CB71F851D13001C0354 /* DownloadManager.swift */; };
+		1F634CBA1F851DEB001C0354 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F634CB91F851DEB001C0354 /* Downloader.swift */; };
+		1F634CBC1F852909001C0354 /* VideoFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F634CBB1F852909001C0354 /* VideoFileManager.swift */; };
+		1F634CBE1F85294B001C0354 /* VideoFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F634CBD1F85294B001C0354 /* VideoFile.swift */; };
 		1F92770E1F8114B00023DEF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92770D1F8114B00023DEF4 /* AppDelegate.swift */; };
 		1F9277151F8114B00023DEF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9277131F8114B00023DEF4 /* Main.storyboard */; };
 		1F9277171F8114B00023DEF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9277161F8114B00023DEF4 /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 /* Begin PBXFileReference section */
 		10C1A9B9245EF3AAA8197E2B /* Pods_VDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15FCEB946CB187C8E9CE3B66 /* Pods-VDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-VDownloader/Pods-VDownloader.release.xcconfig"; sourceTree = "<group>"; };
+		1F634CB71F851D13001C0354 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		1F634CB91F851DEB001C0354 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		1F634CBB1F852909001C0354 /* VideoFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFileManager.swift; sourceTree = "<group>"; };
+		1F634CBD1F85294B001C0354 /* VideoFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFile.swift; sourceTree = "<group>"; };
 		1F92770A1F8114B00023DEF4 /* VDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F92770D1F8114B00023DEF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F9277141F8114B00023DEF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +108,10 @@
 		1F92772B1F8115A20023DEF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1F634CB71F851D13001C0354 /* DownloadManager.swift */,
+				1F634CBB1F852909001C0354 /* VideoFileManager.swift */,
+				1F634CB91F851DEB001C0354 /* Downloader.swift */,
+				1F634CBD1F85294B001C0354 /* VideoFile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,11 +298,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F634CBE1F85294B001C0354 /* VideoFile.swift in Sources */,
+				1F634CB81F851D13001C0354 /* DownloadManager.swift in Sources */,
+				1F634CBA1F851DEB001C0354 /* Downloader.swift in Sources */,
 				1F92770E1F8114B00023DEF4 /* AppDelegate.swift in Sources */,
 				1F9277311F8135090023DEF4 /* BrowserViewModel.swift in Sources */,
 				1F9277261F8115700023DEF4 /* BrowserViewController.swift in Sources */,
 				1F9277281F81157D0023DEF4 /* DownloadsViewController.swift in Sources */,
 				1F9277341F8135200023DEF4 /* DownloadsViewModel.swift in Sources */,
+				1F634CBC1F852909001C0354 /* VideoFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

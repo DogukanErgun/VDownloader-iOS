@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 import AVFoundation
-
+import SCLAlertView
 class BrowserViewController: UIViewController {
 
     @IBOutlet weak var browserTextField: UITextField!
@@ -17,6 +17,8 @@ class BrowserViewController: UIViewController {
     @IBOutlet weak var downloadButtonView: UIView!
     
     var browserViewModel: BrowserViewModel?
+    var alertView: SCLAlertView?
+    
     
     var playedVideoUrlString: String = "" {
         didSet{
@@ -80,6 +82,28 @@ class BrowserViewController: UIViewController {
         }
     }
     
+    // Displaying alertview to get filename
+    fileprivate func displayAlertView() {
+        let alertApperance = SCLAlertView.SCLAppearance(
+            showCloseButton : false
+        )
+        self.alertView = SCLAlertView(appearance:alertApperance)
+        
+        let textField = alertView?.addTextField("ENTER MA NAME HUMAN")
+        
+        alertView!.addButton("Download"){
+            print("Downlaod started video name:\(String(describing: textField?.text))")
+            self.browserViewModel?.downloadVideo(playedVideoUrlString: self.playedVideoUrlString, videoName: (textField?.text)!)
+            
+        }
+        
+        alertView!.addButton("Cancel") {
+            print("Download cancelled.")
+        }
+        
+        alertView!.showInfo("Download", subTitle: "Please enter video name:")
+    }
+    
     //MARK: - IBAction Funcs
     
     @IBAction func goButtonClicked(_ sender: Any) {
@@ -89,8 +113,9 @@ class BrowserViewController: UIViewController {
     }
     
     @IBAction func downloadButtonClicked(_ sender: Any) {
-        
+        displayAlertView()
     }
+    
 }
 
 extension BrowserViewController: UIWebViewDelegate{

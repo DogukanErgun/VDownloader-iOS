@@ -9,5 +9,8 @@
 import UIKit
 
 class BrowserViewModel: NSObject {
-
+    
+    func downloadVideo(playedVideoUrlString: String, videoName:String){
+        DownloadManager.sharedInstance.downloadVideo(playedVideoUrlString: playedVideoUrlString,videoName: videoName)
+    }
 }
