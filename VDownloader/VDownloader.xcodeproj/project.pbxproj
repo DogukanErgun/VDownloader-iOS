@@ -15,9 +15,12 @@
 		1F9277281F81157D0023DEF4 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277271F81157D0023DEF4 /* DownloadsViewController.swift */; };
 		1F9277311F8135090023DEF4 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277301F8135090023DEF4 /* BrowserViewModel.swift */; };
 		1F9277341F8135200023DEF4 /* DownloadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277331F8135200023DEF4 /* DownloadsViewModel.swift */; };
+		F46100F54080C9060952CF63 /* Pods_VDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C1A9B9245EF3AAA8197E2B /* Pods_VDownloader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10C1A9B9245EF3AAA8197E2B /* Pods_VDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15FCEB946CB187C8E9CE3B66 /* Pods-VDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-VDownloader/Pods-VDownloader.release.xcconfig"; sourceTree = "<group>"; };
 		1F92770A1F8114B00023DEF4 /* VDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F92770D1F8114B00023DEF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F9277141F8114B00023DEF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		1F9277271F81157D0023DEF4 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		1F9277301F8135090023DEF4 /* BrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModel.swift; sourceTree = "<group>"; };
 		1F9277331F8135200023DEF4 /* DownloadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewModel.swift; sourceTree = "<group>"; };
+		3674A9F12D4DFF2B48EF4045 /* Pods-VDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDownloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VDownloader/Pods-VDownloader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46100F54080C9060952CF63 /* Pods_VDownloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1312446163C5132562F1A65D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3674A9F12D4DFF2B48EF4045 /* Pods-VDownloader.debug.xcconfig */,
+				15FCEB946CB187C8E9CE3B66 /* Pods-VDownloader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1F9277011F8114B00023DEF4 = {
 			isa = PBXGroup;
 			children = (
 				1F92770C1F8114B00023DEF4 /* VDownloader */,
 				1F92770B1F8114B00023DEF4 /* Products */,
+				1312446163C5132562F1A65D /* Pods */,
+				FCFDFB6E23E0BECD10E71B2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +145,14 @@
 			path = DownloadsViewModel;
 			sourceTree = "<group>";
 		};
+		FCFDFB6E23E0BECD10E71B2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10C1A9B9245EF3AAA8197E2B /* Pods_VDownloader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F92771E1F8114B00023DEF4 /* Build configuration list for PBXNativeTarget "VDownloader" */;
 			buildPhases = (
+				8B7C6B500FFA22274B5DC491 /* [CP] Check Pods Manifest.lock */,
 				1F9277061F8114B00023DEF4 /* Sources */,
 				1F9277071F8114B00023DEF4 /* Frameworks */,
 				1F9277081F8114B00023DEF4 /* Resources */,
+				7D37F227F6C42F8893AE8CB5 /* [CP] Embed Pods Frameworks */,
+				AF18518CE10E3782CFC7FB13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +222,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D37F227F6C42F8893AE8CB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VDownloader/Pods-VDownloader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Disk/Disk.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Disk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VDownloader/Pods-VDownloader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B7C6B500FFA22274B5DC491 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VDownloader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF18518CE10E3782CFC7FB13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VDownloader/Pods-VDownloader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F9277061F8114B00023DEF4 /* Sources */ = {
@@ -340,6 +425,7 @@
 		};
 		1F92771F1F8114B00023DEF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3674A9F12D4DFF2B48EF4045 /* Pods-VDownloader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +442,7 @@
 		};
 		1F9277201F8114B00023DEF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15FCEB946CB187C8E9CE3B66 /* Pods-VDownloader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
