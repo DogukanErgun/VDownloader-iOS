@@ -13,7 +13,9 @@ class VideoFileManager: NSObject {
     static let sharedInstance = VideoFileManager()
 
     var videoFilesArr: [VideoFile] = []
-    
+  
+    let storedJsonFileName = "VideoFilesData.json"
+  
     private override init() {
         super.init()
         retrieveVideoFilesArr()
@@ -26,7 +28,7 @@ class VideoFileManager: NSObject {
     
     func saveVideoFilesArr(){
         do {
-            try Disk.save(videoFilesArr, to: .documents, as: "VideoFilesData.json")
+            try Disk.save(videoFilesArr, to: .documents, as: storedJsonFileName)
             print("Saved")
         }catch let error {
             print(error.localizedDescription)
@@ -36,7 +38,7 @@ class VideoFileManager: NSObject {
     
     func retrieveVideoFilesArr(){
         do{
-            self.videoFilesArr = try Disk.retrieve("VideoFilesData.json", from: .documents , as: [VideoFile].self)
+            self.videoFilesArr = try Disk.retrieve(storedJsonFileName, from: .documents , as: [VideoFile].self)
             print("Retrieved")
         }catch let error {
             print(error.localizedDescription)
