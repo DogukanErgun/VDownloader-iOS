@@ -10,15 +10,11 @@ import UIKit
 
 class DownloadsViewController: UIViewController {
 
-    var downloadsViewModel:DownloadsViewModel?
-    
-    
     //MARK: View Life Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,10 +28,6 @@ class DownloadsViewController: UIViewController {
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-    }
-    
-    func setup(){
-            self.downloadsViewModel = DownloadsViewModel()
     }
 
 }

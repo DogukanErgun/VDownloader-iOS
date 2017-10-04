@@ -17,8 +17,6 @@
 		1F92771A1F8114B00023DEF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9277181F8114B00023DEF4 /* LaunchScreen.storyboard */; };
 		1F9277261F8115700023DEF4 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277251F8115700023DEF4 /* BrowserViewController.swift */; };
 		1F9277281F81157D0023DEF4 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277271F81157D0023DEF4 /* DownloadsViewController.swift */; };
-		1F9277311F8135090023DEF4 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277301F8135090023DEF4 /* BrowserViewModel.swift */; };
-		1F9277341F8135200023DEF4 /* DownloadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9277331F8135200023DEF4 /* DownloadsViewModel.swift */; };
 		F46100F54080C9060952CF63 /* Pods_VDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C1A9B9245EF3AAA8197E2B /* Pods_VDownloader.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +35,6 @@
 		1F92771B1F8114B00023DEF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F9277251F8115700023DEF4 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		1F9277271F81157D0023DEF4 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
-		1F9277301F8135090023DEF4 /* BrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModel.swift; sourceTree = "<group>"; };
-		1F9277331F8135200023DEF4 /* DownloadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewModel.swift; sourceTree = "<group>"; };
 		3674A9F12D4DFF2B48EF4045 /* Pods-VDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDownloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VDownloader/Pods-VDownloader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +57,15 @@
 				15FCEB946CB187C8E9CE3B66 /* Pods-VDownloader.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		1F20EA1D1F854C6500D15606 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F92772E1F8134C90023DEF4 /* DownloadsViewController */,
+				1F92772D1F8134B60023DEF4 /* BrowserViewController */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		1F9277011F8114B00023DEF4 = {
@@ -88,7 +93,7 @@
 				1F9277161F8114B00023DEF4 /* Assets.xcassets */,
 				1F92771B1F8114B00023DEF4 /* Info.plist */,
 				1F92772B1F8115A20023DEF4 /* Models */,
-				1F92772C1F8134930023DEF4 /* ViewModels */,
+				1F20EA1D1F854C6500D15606 /* ViewControllers */,
 				1F9277291F81158E0023DEF4 /* Views */,
 			);
 			path = VDownloader;
@@ -99,8 +104,6 @@
 			children = (
 				1F9277131F8114B00023DEF4 /* Main.storyboard */,
 				1F9277181F8114B00023DEF4 /* LaunchScreen.storyboard */,
-				1F92772D1F8134B60023DEF4 /* BrowserViewController */,
-				1F92772E1F8134C90023DEF4 /* DownloadsViewController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,15 +117,6 @@
 				1F634CBD1F85294B001C0354 /* VideoFile.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		1F92772C1F8134930023DEF4 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				1F9277321F81350E0023DEF4 /* DownloadsViewModel */,
-				1F92772F1F8134FA0023DEF4 /* BrowserViewModel */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		1F92772D1F8134B60023DEF4 /* BrowserViewController */ = {
@@ -139,22 +133,6 @@
 				1F9277271F81157D0023DEF4 /* DownloadsViewController.swift */,
 			);
 			path = DownloadsViewController;
-			sourceTree = "<group>";
-		};
-		1F92772F1F8134FA0023DEF4 /* BrowserViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1F9277301F8135090023DEF4 /* BrowserViewModel.swift */,
-			);
-			path = BrowserViewModel;
-			sourceTree = "<group>";
-		};
-		1F9277321F81350E0023DEF4 /* DownloadsViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1F9277331F8135200023DEF4 /* DownloadsViewModel.swift */,
-			);
-			path = DownloadsViewModel;
 			sourceTree = "<group>";
 		};
 		FCFDFB6E23E0BECD10E71B2F /* Frameworks */ = {
@@ -302,10 +280,8 @@
 				1F634CB81F851D13001C0354 /* DownloadManager.swift in Sources */,
 				1F634CBA1F851DEB001C0354 /* Downloader.swift in Sources */,
 				1F92770E1F8114B00023DEF4 /* AppDelegate.swift in Sources */,
-				1F9277311F8135090023DEF4 /* BrowserViewModel.swift in Sources */,
 				1F9277261F8115700023DEF4 /* BrowserViewController.swift in Sources */,
 				1F9277281F81157D0023DEF4 /* DownloadsViewController.swift in Sources */,
-				1F9277341F8135200023DEF4 /* DownloadsViewModel.swift in Sources */,
 				1F634CBC1F852909001C0354 /* VideoFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

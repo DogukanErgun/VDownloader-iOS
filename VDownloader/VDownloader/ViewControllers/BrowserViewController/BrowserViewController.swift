@@ -16,9 +16,7 @@ class BrowserViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var downloadButtonView: UIView!
     
-    var browserViewModel: BrowserViewModel?
     var alertView: SCLAlertView?
-    
     
     var playedVideoUrlString: String = "" {
         didSet{
@@ -51,7 +49,7 @@ class BrowserViewController: UIViewController {
     }
     
     func setup(){
-        self.browserViewModel = BrowserViewModel()
+
         
         //Registration to receive url path of playing video (usage prohibited in AppStore)
          NotificationCenter.default.addObserver(self, selector: #selector(self.playerItemRunning), name: NSNotification.Name(rawValue: "AVPlayerItemBecameCurrentNotification"), object: nil)
@@ -93,8 +91,7 @@ class BrowserViewController: UIViewController {
         
         alertView!.addButton("Download"){
             print("Downlaod started video name:\(String(describing: textField?.text))")
-            self.browserViewModel?.downloadVideo(playedVideoUrlString: self.playedVideoUrlString, videoName: (textField?.text)!)
-            
+            DownloadManager.sharedInstance.downloadVideo(playedVideoUrlString: self.playedVideoUrlString,videoName: (textField?.text)!)
         }
         
         alertView!.addButton("Cancel") {
