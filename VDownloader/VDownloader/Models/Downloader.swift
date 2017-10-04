@@ -50,7 +50,7 @@ extension Downloader : URLSessionDelegate, URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print("Downloaded")
         guard let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let destinationURL = documentsDirectoryURL.appendingPathComponent("\(videoName).mp4") // Video might not be mp4, find a better way.
+        let destinationURL = documentsDirectoryURL.appendingPathComponent("\(videoName).mp4") // Video might not be mp4, find a better way. location.pathExtension check it
         do{
             try FileManager.default.moveItem(at: location, to: destinationURL)
             print("Documents Directory URL \(documentsDirectoryURL)")

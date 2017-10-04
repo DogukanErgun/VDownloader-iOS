@@ -24,6 +24,7 @@ class VideoFileManager: NSObject {
     func addNewVideoFile(videoFile:VideoFile){
         self.videoFilesArr.append(videoFile)
         saveVideoFilesArr()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NSNotification.Name.RawValue("VideoDownloaded")), object: nil,userInfo:["DownloadedFileName":"\(videoFile.videoName)"])
     }
     
     func saveVideoFilesArr(){

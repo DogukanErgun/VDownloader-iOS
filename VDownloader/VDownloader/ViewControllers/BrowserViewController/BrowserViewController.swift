@@ -49,10 +49,27 @@ class BrowserViewController: UIViewController {
     }
     
     func setup(){
-
-        
         //Registration to receive url path of playing video (usage prohibited in AppStore)
-         NotificationCenter.default.addObserver(self, selector: #selector(self.playerItemRunning), name: NSNotification.Name(rawValue: "AVPlayerItemBecameCurrentNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.playerItemRunning), name: NSNotification.Name(rawValue: "AVPlayerItemBecameCurrentNotification"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(savedVideosListUpdated(notification:)), name:NSNotification.Name(rawValue: "VideoDownloaded"), object: nil)
+        
+    }
+    
+    @objc func savedVideosListUpdated(notification:Notification) {
+        print("Saved videos UPDATED")
+        
+        if let videoName = notification.userInfo!["DownloadedFileName"] as? String{
+            displayDownloadedVideoAlertView(filename: videoName)
+        }
+    }
+    
+    func displayDownloadedVideoAlertView(filename:String){
+        let alertApperance = SCLAlertView.SCLAppearance(
+            
+        )
+        self.alertView = SCLAlertView(appearance:alertApperance)
+        alertView!.showInfo("Download Completed", subTitle: "\(filename) named video downloaded.",closeButtonTitle: "DISMISS")
     }
     
     func makeBrowserRequestFromString(link:String) {
@@ -98,7 +115,7 @@ class BrowserViewController: UIViewController {
             print("Download cancelled.")
         }
         
-        alertView!.showInfo("Download", subTitle: "Please enter video name:")
+        alertView!.showEdit("Download", subTitle: "Please enter video name:")
     }
     
     //MARK: - IBAction Funcs
