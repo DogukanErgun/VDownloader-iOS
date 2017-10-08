@@ -19,10 +19,10 @@ class BrowserViewController: UIViewController {
     var alertView: SCLAlertView?
     
     var playedVideoUrlString: String = "" {
-        didSet{
+        didSet {
             if playedVideoUrlString == "" {
                 hideDownloadButtonView()
-            }else{
+            } else {
                 displayDownloadButtonView()
             }
         }
